@@ -36,7 +36,7 @@
             this.btnlocalidad = new System.Windows.Forms.Button();
             this.btncurso = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnreportes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -146,26 +146,26 @@
             this.label2.Size = new System.Drawing.Size(573, 85);
             this.label2.TabIndex = 7;
             // 
-            // button1
+            // btnreportes
             // 
-            this.button1.BackColor = System.Drawing.Color.Goldenrod;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(317, 99);
-            this.button1.Name = "btnreportes";
-            this.button1.Size = new System.Drawing.Size(136, 115);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Reportes";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnreportes.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnreportes.FlatAppearance.BorderSize = 0;
+            this.btnreportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreportes.ForeColor = System.Drawing.Color.White;
+            this.btnreportes.Location = new System.Drawing.Point(317, 99);
+            this.btnreportes.Name = "btnreportes";
+            this.btnreportes.Size = new System.Drawing.Size(136, 115);
+            this.btnreportes.TabIndex = 8;
+            this.btnreportes.Text = "Reportes";
+            this.btnreportes.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 365);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnreportes);
             this.Controls.Add(this.btncurso);
             this.Controls.Add(this.btnlocalidad);
             this.Controls.Add(this.btnsalir);
@@ -193,7 +193,7 @@
         private System.Windows.Forms.Button btnlocalidad;
         private System.Windows.Forms.Button btncurso;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnreportes;
     }
 }
 
