@@ -20,6 +20,7 @@ namespace SistemaRegistroAcademico
 
         private void btnlocalidad_Click(object sender, EventArgs e)
         {
+            // Crear y mostrar objeto del formulario localidad
             frmLocalidad formlocalidad = new frmLocalidad();
             formlocalidad.ShowDialog();
             this.DialogResult = DialogResult.OK;
