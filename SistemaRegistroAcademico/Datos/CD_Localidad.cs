@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SistemaRegistroAcademico.Negocio;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace SistemaRegistroAcademico.Datos
 {
@@ -47,7 +48,39 @@ namespace SistemaRegistroAcademico.Datos
             }
             return lista;
         }
+        public DataTable leerLocalidad()
+        {
+            SqlDataAdapter adaptador = new SqlDataAdapter();
+            DataTable dtLocalidad = new DataTable();
+            using (SqlConnection oconexion = new SqlConnection(CD_Conexion.cadena))
+            {
+                try
+                {
+                    string query = "select id_localidad,nombre from LOCALIDAD";
+                    SqlCommand cmd = new SqlCommand(query, oconexion);
+                    cmd.CommandType = CommandType.Text;
 
+                    oconexion.Open();
+                    adaptador = new SqlDataAdapter();
+                    adaptador.SelectCommand = cmd;
+                    dtLocalidad = new DataTable();
+                    adaptador.Fill(dtLocalidad);
+
+                    oconexion.Close();
+
+                    return dtLocalidad;
+                }
+
+                catch (Exception)
+                {
+
+                    dtLocalidad = new DataTable();
+                    MessageBox.Show("Error al seleccionar los registros", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+            }
+
+        }
         public bool Agregar(CN_Localidad oCN_Localidad)
         {
             string consulta = "INSERT INTO LOCALIDAD(id_localidad,nombre) VALUES('" + oCN_Localidad.Id_localidad + "','" + oCN_Localidad.Nombre + "');";

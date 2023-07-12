@@ -35,7 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpf_nacimiento = new System.Windows.Forms.DateTimePicker();
             this.cbxLocalidad = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -46,6 +46,7 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnExaminar = new System.Windows.Forms.Button();
+            this.btnprueba = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.SuspendLayout();
@@ -92,7 +93,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(231, 214);
+            this.label3.Location = new System.Drawing.Point(577, 152);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 16);
             this.label3.TabIndex = 5;
@@ -107,65 +108,70 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Fecha de Nacimiento:";
             // 
-            // dateTimePicker1
+            // dtpf_nacimiento
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(349, 171);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 8;
+            this.dtpf_nacimiento.Location = new System.Drawing.Point(349, 171);
+            this.dtpf_nacimiento.Name = "dtpf_nacimiento";
+            this.dtpf_nacimiento.Size = new System.Drawing.Size(200, 22);
+            this.dtpf_nacimiento.TabIndex = 8;
+            this.dtpf_nacimiento.ValueChanged += new System.EventHandler(this.dtpf_nacimiento_ValueChanged);
             // 
             // cbxLocalidad
             // 
             this.cbxLocalidad.FormattingEnabled = true;
-            this.cbxLocalidad.Location = new System.Drawing.Point(228, 233);
+            this.cbxLocalidad.Location = new System.Drawing.Point(560, 171);
             this.cbxLocalidad.Name = "cbxLocalidad";
             this.cbxLocalidad.Size = new System.Drawing.Size(216, 24);
             this.cbxLocalidad.TabIndex = 9;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(191, 270);
+            this.btnAgregar.Location = new System.Drawing.Point(362, 254);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(99, 42);
             this.btnAgregar.TabIndex = 10;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(280, 270);
+            this.btnModificar.Location = new System.Drawing.Point(467, 254);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.Size = new System.Drawing.Size(99, 42);
             this.btnModificar.TabIndex = 11;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(369, 270);
+            this.btnBorrar.Location = new System.Drawing.Point(572, 254);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrar.Size = new System.Drawing.Size(99, 42);
             this.btnBorrar.TabIndex = 12;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(458, 270);
+            this.btnCancelar.Location = new System.Drawing.Point(677, 254);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(99, 42);
             this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // dgvEstudiantes
             // 
+            this.dgvEstudiantes.AllowUserToAddRows = false;
+            this.dgvEstudiantes.AllowUserToDeleteRows = false;
+            this.dgvEstudiantes.AllowUserToResizeColumns = false;
+            this.dgvEstudiantes.AllowUserToResizeRows = false;
             this.dgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstudiantes.Location = new System.Drawing.Point(18, 355);
             this.dgvEstudiantes.Name = "dgvEstudiantes";
             this.dgvEstudiantes.RowHeadersWidth = 51;
             this.dgvEstudiantes.RowTemplate.Height = 24;
-            this.dgvEstudiantes.Size = new System.Drawing.Size(527, 88);
+            this.dgvEstudiantes.Size = new System.Drawing.Size(608, 265);
             this.dgvEstudiantes.TabIndex = 14;
             // 
             // picFoto
@@ -194,18 +200,29 @@
             // 
             // btnExaminar
             // 
-            this.btnExaminar.Location = new System.Drawing.Point(57, 270);
+            this.btnExaminar.Location = new System.Drawing.Point(57, 254);
             this.btnExaminar.Name = "btnExaminar";
-            this.btnExaminar.Size = new System.Drawing.Size(75, 23);
+            this.btnExaminar.Size = new System.Drawing.Size(99, 42);
             this.btnExaminar.TabIndex = 18;
             this.btnExaminar.Text = "Examinar...";
             this.btnExaminar.UseVisualStyleBackColor = true;
+            // 
+            // btnprueba
+            // 
+            this.btnprueba.Location = new System.Drawing.Point(224, 308);
+            this.btnprueba.Name = "btnprueba";
+            this.btnprueba.Size = new System.Drawing.Size(169, 41);
+            this.btnprueba.TabIndex = 19;
+            this.btnprueba.Text = "Ver datos de prueba";
+            this.btnprueba.UseVisualStyleBackColor = true;
+            this.btnprueba.Click += new System.EventHandler(this.btnprueba_Click);
             // 
             // frmEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(577, 471);
+            this.ClientSize = new System.Drawing.Size(793, 645);
+            this.Controls.Add(this.btnprueba);
             this.Controls.Add(this.btnExaminar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtID);
@@ -216,7 +233,7 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.cbxLocalidad);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpf_nacimiento);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -226,6 +243,7 @@
             this.Controls.Add(this.txtNombre);
             this.Name = "frmEstudiantes";
             this.Text = "frmEstudiantes";
+            this.Load += new System.EventHandler(this.frmEstudiantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             this.ResumeLayout(false);
@@ -242,7 +260,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpf_nacimiento;
         private System.Windows.Forms.ComboBox cbxLocalidad;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
@@ -253,5 +271,6 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnExaminar;
+        private System.Windows.Forms.Button btnprueba;
     }
 }
