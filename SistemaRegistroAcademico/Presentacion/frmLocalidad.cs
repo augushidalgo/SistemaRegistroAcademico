@@ -27,12 +27,20 @@ namespace SistemaRegistroAcademico.Presentacion
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (oCD_Localidad.Agregar(RecuperarInfo()))
+            if (txtID.Text != "" && txtNombre.Text != "")
             {
-                MessageBox.Show("Registro almacenado correctamente.", "Aviso", MessageBoxButtons.OK);
-                dgvLocalidad.DataSource = oCD_Localidad.Listar().ToList();
-                dgvLocalidad.Columns[0].HeaderText = "ID";
-                dgvLocalidad.Columns[1].HeaderText = "Localidad";
+
+                if (oCD_Localidad.Agregar(RecuperarInfo()))
+                {
+                    MessageBox.Show("Registro almacenado correctamente.", "Aviso", MessageBoxButtons.OK);
+                    dgvLocalidad.DataSource = oCD_Localidad.Listar().ToList();
+                    dgvLocalidad.Columns[0].HeaderText = "ID";
+                    dgvLocalidad.Columns[1].HeaderText = "Localidad";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar un ID y un nombre", "Aviso", MessageBoxButtons.OK);
             }
 
             

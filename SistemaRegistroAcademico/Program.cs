@@ -18,7 +18,7 @@ namespace SistemaRegistroAcademico
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEstudiantes());
+            Application.Run(new frmreporteEstudiantes());
         }
     }
 }
